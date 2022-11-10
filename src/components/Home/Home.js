@@ -11,7 +11,7 @@ const Home = ()  => {
         <div className={classes.title}>
             <h4 className={classes.text}><strong> MY GITHUB PORTFOLIO </strong></h4>
             <h3 className={classes.qualif}><strong>  Certified Frontend Engineer </strong></h3>
-            <p className={classes.name}>IFEOLUWA AKOTO</p>
+            <p className={classes.name}>AIPOLA MICHAEL OLUWASEGUN</p>
         
          
          <span><NavLink to={"/repositories"} className="btn btn-secondary" style={{fontWeight:"600"}}>View Repositories</NavLink></span>
