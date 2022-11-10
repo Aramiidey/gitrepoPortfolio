@@ -1,0 +1,40 @@
+.loadspinner {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    margin-top: 200px;
+  }
+
+  .error{
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .emoji{
+    height: auto;
+    max-width: 100%;
+  }
+
+
+  .navlink {
+    width: 100%;
+  }
+
+  .card {
+    width: 17rem;
+  }
+
+
+  @media only screen and (max-width: 600px) { 
+    .error{
+      font-size: 20px;
+    } 
+  }
+
+  @media only screen and (min-width: 600px) {
+    .error{
+      font-size: 30px;
+    }
+  }

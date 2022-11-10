@@ -1,0 +1,19 @@
+.loadspinner {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    margin-top: 200px;
+  }
+
+
+  .error{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .borderline {
+    border-left: 2px;
+    border-style: solid;
+  }
