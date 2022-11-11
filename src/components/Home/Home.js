@@ -14,7 +14,10 @@ const Home = ()  => {
             <p className={classes.name}>AIPOLA MICHAEL OLUWASEGUN</p>
         
          
-         <span><NavLink to={"/repositories"} className="btn btn-secondary" style={{fontWeight:"600"}}>View Repositories</NavLink></span>
+         <span>
+          <NavLink to={"/repositories"} className="btn btn-secondary mr-4" style={{fontWeight:"600"}}>View Repositories</NavLink> 
+          <NavLink to={"/repositories/reponame/fsggsgsggsg"} className="btn btn-secondary" style={{fontWeight:"600"}}>E404 - Page</NavLink>
+         </span>
        
          </div> 
       </div>
