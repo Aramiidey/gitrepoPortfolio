@@ -25,6 +25,9 @@ const SingleRepo = ({ repoData, errorMessage, isLoading, allRepos }) => {
         xs={12}
         className={`${classes.borderline} d-none d-sm-block`}
       >
+        <div>
+          <p><strong>Check other Repositories</strong></p>
+        </div>
         {allRepos.map((repo) => {
           return (
             <div key={repo.id} className="mt-3">
@@ -59,11 +62,11 @@ const SingleRepo = ({ repoData, errorMessage, isLoading, allRepos }) => {
 
          {repoData.created_at ? <Accordion defaultActiveKey="0" flush>
             <Accordion.Item eventKey="0">
-              <Accordion.Header>Description</Accordion.Header>
+              <Accordion.Header><strong>Description</strong></Accordion.Header>
               <Accordion.Body>{repoData.description}</Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1">
-              <Accordion.Header>Repository Data</Accordion.Header>
+              <Accordion.Header><strong>Repository Data</strong></Accordion.Header>
               <Accordion.Body>
                 <p>
                   Default Branch:
