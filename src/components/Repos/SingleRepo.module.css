@@ -18,5 +18,19 @@
     border-style: solid;
   }
 
+  .detailsText {
+    font-weight: 600;
+  }
+
+  .repoTitle{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  .repoTime {
+    font-size: 15px;
+  }
+
 
   

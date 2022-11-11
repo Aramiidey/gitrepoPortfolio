@@ -12,14 +12,13 @@ const SingleRepoPage = () => {
     const params = useParams()
     const {reponame} = params
 
-    console.log(reponame)
 
     const onGetSingleRepo = async () => {
         setIsLoading(true)
         try{
             const response = await getSingleRepo(reponame)
         
-            if(!response.data){
+            if(!response){
                 setIsLoading(false)
                 setErrorMessage("something went wrong")
             }
@@ -30,7 +29,7 @@ const SingleRepoPage = () => {
               }
 
             setIsLoading(false)
-            setSingleRepo(response.data)
+            setSingleRepo(response)
 
         }catch(error){
            setIsLoading(false)
