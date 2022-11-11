@@ -25,12 +25,12 @@ const RepoLists = ({repos, isLoading, errorMessage}) => {
             <Card.Img variant="top" src={GitHubImg} />
             <Card.Body>
               <Card.Title>{repo.name}</Card.Title>
-              <Card.Text>
-               {repo.description ? repo.description : "Description for this repository is not provided yet"}
+              <p><span style={{fontWeight:"600"}}>{new Date(repo.created_at).toDateString()}</span></p>
+              <Card.Text className={classes.repoText}>
+               {repo.description ? repo.description : "Description for this repository is not provided yet, view more details using the button below"}
                
-              
                <div>
-               <span style={{fontWeight:"600"}}>{new Date(repo.created_at).toDateString()}</span>
+               
                </div>
               </Card.Text> 
               <NavLink
