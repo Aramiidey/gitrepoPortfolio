@@ -5,15 +5,14 @@
 }
 .banner {
   background:url("https://webdevtrick.com/wp-content/uploads/1st.jpg");
-  background-size:cover;
-  background-repeat: no-repeat;
-  height: 2000px;
+  height: 600px !important;
 }
 
 .overlay {
   background: rgba(0, 0, 0, 0.76);
-  height: 550px;
+  height: 610px;
   width: 100%;
+
 }
 
 .title {
@@ -22,14 +21,9 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 50px;
-  /* position: relative; */
+  margin-bottom: 40px;
   top: 250px;
 }
-
-/* .title { */
-  /* font-size: 6.5em; */
-  /* padding-bottom: 15px; */
-/* } */
  
 .qualif {
   font-size: 50px !important;
