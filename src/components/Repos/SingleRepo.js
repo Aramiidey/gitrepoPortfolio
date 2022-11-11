@@ -79,7 +79,7 @@ const SingleRepo = ({ repoData, errorMessage, isLoading, allRepos }) => {
     <Container fluid>
       <Row>
         {isLoading === true && repoLoading}
-        {!repoData && isLoading === false && errorMessage && errorData}
+        {errorMessage && errorData}
         {repoData && repositoryData}    
         {allrepos}
     </Row>

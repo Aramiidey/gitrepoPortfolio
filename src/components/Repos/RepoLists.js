@@ -9,7 +9,7 @@ import GitHubImg from "../../assets/githubimage.png"
 import CryingEmoji from "../../assets/cryingemoji.jpg"
 
 const RepoLists = ({repos, isLoading, errorMessage}) => {
-  console.log(errorMessage)
+
   const repoData =  <Row>
     {repos.length > 0 && repos.map((repo) => {
           return  <Col lg={4} md={6} sm={6} xs={12} xl={4}>

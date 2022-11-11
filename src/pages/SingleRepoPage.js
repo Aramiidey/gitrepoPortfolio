@@ -12,6 +12,8 @@ const SingleRepoPage = () => {
     const params = useParams()
     const {reponame} = params
 
+    console.log(reponame)
+
     const onGetSingleRepo = async () => {
         setIsLoading(true)
         try{

@@ -1,7 +1,7 @@
 import { Octokit } from "octokit";
 
 const octokit = new Octokit({
-  auth: "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",
+  auth: "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",
   userAgent: "skylight v1",
 });
  
@@ -19,6 +19,7 @@ export const getAllRepos = async () => {
        }
 
 }
+
 
 export const getSingleRepo = async (repoName) => {
   try {
