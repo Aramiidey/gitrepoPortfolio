@@ -1,24 +1,32 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
+import React, {useState} from "react"
+import {Container, Row, Col, Card} from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import classes from "./Repolists.module.css"
 import LoadingSpinner from "../UI/LoadingSpinner"
 import GitHubImg from "../../assets/githubimage.png"
 import CryingEmoji from "../../assets/cryingemoji.jpg"
+import Pagination from "../Pagination/Pagination"
 
 const RepoLists = ({repos, isLoading, errorMessage}) => {
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recordsPerPage] = useState(3);
+
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = repos.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(repos.length / recordsPerPage)
+
+
   const repoData =  <Row>
-    {repos.length > 0 && repos.map((repo) => {
+    {repos.length > 0 && currentRecords.map((repo) => {
           return  <Col lg={4} md={6} sm={6} xs={12} xl={4}>
           <Card key={repo.id} className={`${classes.card} mb-3`}>
             <Card.Img variant="top" src={GitHubImg} />
             <Card.Body>
               <Card.Title>{repo.name}</Card.Title>
               <Card.Text>
-               {repo.description}
+               {repo.description ? repo.description : "Description for this repository is not provided yet"}
                
               
                <div>
@@ -66,6 +74,12 @@ const RepoLists = ({repos, isLoading, errorMessage}) => {
       {isLoading === true && repoLoading}
        {repos && repos.length > 0 && repoData} 
        {errorMessage && errorData}
+
+<Pagination
+    nPages = { nPages }
+    currentPage = { currentPage } 
+    setCurrentPage = { setCurrentPage }
+/>
     </Container>
   );
 };
