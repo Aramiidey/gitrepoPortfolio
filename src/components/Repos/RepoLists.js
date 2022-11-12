@@ -11,15 +11,26 @@ const RepoLists = ({repos, isLoading, errorMessage}) => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(3);
-
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-  const currentRecords = repos.slice(indexOfFirstRecord, indexOfLastRecord);
-  const nPages = Math.ceil(repos.length / recordsPerPage)
+  
+  
+  let currentRecords
+  let nPages
 
+
+  if(!repos.error && repos.length > 0){
+    currentRecords = repos.slice(indexOfFirstRecord, indexOfLastRecord);  
+    nPages = Math.ceil(repos.length / recordsPerPage)
+  }else{
+    currentRecords = []
+    nPages = []
+  }
+  
+  console.log(nPages)
 
   const repoData =  <Row>
-    {repos.length > 0 && currentRecords.map((repo) => {
+    {!repos.error && repos.length > 0 && currentRecords.map((repo) => {
           return  <Col lg={4} md={6} sm={6} xs={12} xl={4}>
           <Card key={repo.id} className={`${classes.card} mb-3`}>
             <Card.Img variant="top" src={GitHubImg} />
@@ -49,18 +60,18 @@ const RepoLists = ({repos, isLoading, errorMessage}) => {
  
  const errorData = 
  <Row>
-  <Col lg={3} md={2} xs={12}>
-    
-  </Col>
-  <Col lg={6} md={8} xs={12}>
-    <h1 className={`centered ${classes.error}`}>{errorMessage}</h1>
-    <div>
-      <img src={CryingEmoji} className={classes.emoji}/>
-    </div>
-  </Col>
-  <Col lg={3} md={2} xs={12}>
-    
-  </Col>
+    <Col lg={3} md={2} xs={12}>
+      
+    </Col>
+    <Col lg={6} md={8} xs={12}>
+      <h1 className={`centered ${classes.error}`}>{errorMessage}</h1>
+      <div>
+        <img src={CryingEmoji} className={classes.emoji}/>
+      </div>
+    </Col>
+    <Col lg={3} md={2} xs={12}>
+      
+    </Col>
  </Row>
  
  const repoLoading = <Row>
@@ -73,13 +84,13 @@ const RepoLists = ({repos, isLoading, errorMessage}) => {
     <Container>
       {isLoading === true && repoLoading}
        {repos && repos.length > 0 && repoData} 
-       {errorMessage && errorData}
+       {repos.error && errorMessage && errorData}
 
-<Pagination
+{nPages > 0 && <Pagination
     nPages = { nPages }
     currentPage = { currentPage } 
     setCurrentPage = { setCurrentPage }
-/>
+/> }
     </Container>
   );
 };

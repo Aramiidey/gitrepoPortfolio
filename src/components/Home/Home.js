@@ -10,7 +10,7 @@ const Home = ()  => {
     <div className="col-12 text-center">
         <div className={classes.title}>
             <h4 className={classes.text}><strong> MY GITHUB PORTFOLIO </strong></h4>
-            <h3 className={classes.qualif}><strong>  Certified Frontend Engineer </strong></h3>
+            <h3 className={classes.qualif}><strong>Certified Frontend Engineer </strong></h3>
             <p className={classes.name}>AIPOLA MICHAEL OLUWASEGUN</p>
         
          

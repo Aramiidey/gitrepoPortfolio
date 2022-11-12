@@ -19,7 +19,7 @@ const  MainNav = () => {
               height="30"
               className={`d-inline-block align-top ${classes.img}`}
             />{' '}
-            GitHub Repo
+            GitHub-Repo
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -28,8 +28,8 @@ const  MainNav = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <NavLink to={"/"}> <span style={{color:"white", marginRight:"20px"}}>Home</span></NavLink>
-            <NavLink to={"/repositories"}><span style={{color:"white", marginRight:"20px"}}>Repos</span></NavLink>
+            <NavLink to={"/"}> <span className={classes.link}>Home</span></NavLink>
+            <NavLink to={"/repositories"}><span className={classes.link2}>Repos</span></NavLink>
           </Nav>
           <SearchBar />
         </Navbar.Collapse>

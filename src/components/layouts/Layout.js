@@ -1,17 +1,13 @@
-import React, { useState, Fragment } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import React, { Fragment } from "react";
+import { useLocation} from "react-router-dom";
 import classes from "./Layout.module.css";
 import MainNav from "./MainNav";
 import { seo } from "../../helpers/seo";
 
 const Layout = (props) => {
-  const [isHome, setIsHome] = useState(false);
   const location = useLocation();
-  const params = useParams()
- 
-
   const { pathname } = location;
-  const { reponame } = params;
+
 
  
   let titleData;
@@ -51,3 +47,4 @@ const Layout = (props) => {
 };
 
 export default Layout;
+
