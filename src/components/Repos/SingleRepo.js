@@ -68,21 +68,21 @@ const SingleRepo = ({ repoData, errorMessage, isLoading, allRepos }) => {
             <Accordion.Item eventKey="1">
               <Accordion.Header><strong>Repository Data</strong></Accordion.Header>
               <Accordion.Body>
-                <p>
+                <p className={classes.keyValue}>
                   Default Branch:
                   <span className={classes.detailsText}>
                     {repoData.default_branch}
                   </span>
                 </p>
 
-                <p>
+                <p className={classes.keyValue}>
                   Language:
                   <span className={classes.detailsText}>
                     {repoData.language}
                   </span>
                 </p>
 
-                <p>
+                <p className={classes.keyValue}>
                   To clone repo run git clone:{" "}
                   <span className={classes.detailsText}>
                     {repoData.clone_url}
@@ -94,7 +94,7 @@ const SingleRepo = ({ repoData, errorMessage, isLoading, allRepos }) => {
                 <div>
                   <a
                     href={repoData.html_url}
-                    className="btn btn-secondary"
+                    className={`${classes.bt} btn btn-secondary`}
                     target={`_blank`}
                   >
                     View Repo

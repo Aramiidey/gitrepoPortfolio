@@ -31,4 +31,31 @@
   }
 
 
+  /* For Mobile Portrait View */
+  @media screen and (max-device-width: 480px)
+  and (orientation: portrait) {
+    .keyValue {
+      font-size: 10px;
+    }
+
+    .repoTitle{
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .repoTime {
+      font-size: 8px;
+    }
+
+    .detailsText {
+      font-weight: 600;
+      font-size: 8px;
+    }
+
+    .bt{
+      width: 100%;
+    }
+
   
+  }

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import classes from "./Layout.module.css";
 import MainNav from "./MainNav";
 import { seo } from "../../helpers/seo";
@@ -8,8 +8,6 @@ const Layout = (props) => {
   const location = useLocation();
   const { pathname } = location;
 
-
- 
   let titleData;
 
   if (pathname === "/") {
@@ -25,7 +23,9 @@ const Layout = (props) => {
   } else if (pathname === `/repositories/${pathname.split("/")[2]}`) {
     titleData = {
       title: `Git Repo - Aramiidey/${pathname.split("/")[2]}`,
-      metaDescription: `Basic information about ${pathname.split("/")[2]} git repository`,
+      metaDescription: `Basic information about ${
+        pathname.split("/")[2]
+      } git repository`,
     };
   } else {
     titleData = {
@@ -47,4 +47,3 @@ const Layout = (props) => {
 };
 
 export default Layout;
-

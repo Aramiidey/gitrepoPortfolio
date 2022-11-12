@@ -11,11 +11,12 @@ const SearchBar = ({onHideNav, onShowNav}) => {
   const [fetchedRepo, setFetchedRepo] = useState([]);
 
 
-
+//hide other nav menus on mobile while searching repo
  const onFocusToSearchInput = () => {
    onHideNav()
  }
 
+ //display other nav menus after searching
  const onUnfocusToSearchInput = () => {
   onShowNav()
  }

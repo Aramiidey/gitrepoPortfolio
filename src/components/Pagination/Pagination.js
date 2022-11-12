@@ -4,16 +4,21 @@ import classes from "./Pagination.module.css"
 
 
 const Pagination = ({nPages, currentPage, setCurrentPage }) => {
+    // create array of numbers from number of n pages
     const pageNumbers = [...Array(nPages + 1).keys()].slice(1)
    
+    // next page click handler
     const nextPage = () => {
         if(currentPage !== nPages) 
             setCurrentPage(currentPage + 1)
     }
+
+    //previous page click handler
     const prevPage = () => {
         if(currentPage !== 1) 
             setCurrentPage(currentPage - 1)
     }
+    
     return <nav>
         <ul className="pagination justify-content-center">
             <li className="page-item">

@@ -1,21 +1,21 @@
-import React, {useState} from "react"
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import {NavLink} from "react-router-dom"
-import Nav from 'react-bootstrap/Nav';
-import classes from "./MainNav.module.css"
-import SearchBar from './SearchBar';
-import ProfileImage from "../../assets/profile.jpg"
+import React, { useState } from "react";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import { NavLink } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import classes from "./MainNav.module.css";
+import SearchBar from "./SearchBar";
+import ProfileImage from "../../assets/profile.jpg";
 
-const  MainNav = () => {
-  const [hideNav, setHideNav] = useState(false)
+const MainNav = () => {
+  const [hideNav, setHideNav] = useState(false);
   const onHideNav = () => {
-    setHideNav(true)
-  }
+    setHideNav(true);
+  };
 
   const showNav = () => {
-    setHideNav(false)
-  }
+    setHideNav(false);
+  };
 
   return (
     <>
@@ -28,27 +28,38 @@ const  MainNav = () => {
               width="30"
               height="30"
               className={`d-inline-block align-top ${classes.img}`}
-            />{' '}
+            />{" "}
             <span className={hideNav ? classes.hide : " "}>GitHub-Repo</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <NavLink to={"/"}> <span className={`${classes.link} ${hideNav ? classes.hide : " "}`}>Home</span></NavLink>
-            <NavLink to={"/repositories"}><span className={`${classes.link2} ${hideNav ? classes.hide : " "}`}>Repos</span></NavLink>
-          </Nav>
-          <SearchBar onHideNav = {onHideNav} onShowNav={showNav} />
-        </Navbar.Collapse>
-
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="me-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              <NavLink to={"/"}>
+                {" "}
+                <span
+                  className={`${classes.link} ${hideNav ? classes.hide : " "}`}
+                >
+                  Home
+                </span>
+              </NavLink>
+              <NavLink to={"/repositories"}>
+                <span
+                  className={`${classes.link2} ${hideNav ? classes.hide : " "}`}
+                >
+                  Repos
+                </span>
+              </NavLink>
+            </Nav>
+            <SearchBar onHideNav={onHideNav} onShowNav={showNav} />
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
   );
-}
-
+};
 
 export default MainNav;
