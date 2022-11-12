@@ -120,12 +120,12 @@ and (orientation: portrait) {
 
 .banner {
   background:url("https://webdevtrick.com/wp-content/uploads/1st.jpg");
-  height: 660px !important;
+  height: 650px !important;
 }
 
 .overlay {
   background: rgba(0, 0, 0, 0.76);
-  height: 660px;
+  height: 650px;
   width: 100%;
 
 }
