@@ -15,8 +15,8 @@ const Home = ()  => {
         
          
          <span>
-          <NavLink to={"/repositories"} className="btn btn-secondary mr-4" style={{fontWeight:"600"}}>View Repositories</NavLink> 
-          <NavLink to={"/repositories/reponame/fsggsgsggsg"} className="btn btn-secondary" style={{fontWeight:"600"}}>E404 - Page</NavLink>
+          <NavLink to={"/repositories"} className={`${classes.navlink} btn btn-secondary mr-4`}>View Repositories</NavLink> 
+          <NavLink to={"/repositories/reponame/fsggsgsggsg"} className={`${classes.navlink} btn btn-secondary mr-4`}>E404 - Page</NavLink>
          </span>
        
          </div> 
