@@ -118,15 +118,15 @@ and (orientation: portrait) {
   padding: 5px;
 }
 
-.banner {
-  background:url("https://webdevtrick.com/wp-content/uploads/1st.jpg");
-  height: 610px !important;
-}
-
-.overlay {
-  background: rgba(0, 0, 0, 0.76);
-  height: 610px;
-  width: 100%;
-
-}
+/* .banner { */
+  /* background:url("https://webdevtrick.com/wp-content/uploads/1st.jpg"); */
+  /* height: 610px !important; */
+/* } */
+/*  */
+/* .overlay { */
+  /* background: rgba(0, 0, 0, 0.76); */
+  /* height: 610px; */
+  /* width: 100%; */
+/*  */
+/* } */
 }
