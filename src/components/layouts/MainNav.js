@@ -1,3 +1,4 @@
+import React, {useState} from "react"
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import {NavLink} from "react-router-dom"
@@ -7,6 +8,15 @@ import SearchBar from './SearchBar';
 import ProfileImage from "../../assets/profile.jpg"
 
 const  MainNav = () => {
+  const [hideNav, setHideNav] = useState(false)
+  const onHideNav = () => {
+    setHideNav(true)
+  }
+
+  const showNav = () => {
+    setHideNav(false)
+  }
+
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -19,7 +29,7 @@ const  MainNav = () => {
               height="30"
               className={`d-inline-block align-top ${classes.img}`}
             />{' '}
-            GitHub-Repo
+            <span className={hideNav ? classes.hide : " "}>GitHub-Repo</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -28,10 +38,10 @@ const  MainNav = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <NavLink to={"/"}> <span className={classes.link}>Home</span></NavLink>
-            <NavLink to={"/repositories"}><span className={classes.link2}>Repos</span></NavLink>
+            <NavLink to={"/"}> <span className={`${classes.link} ${hideNav ? classes.hide : " "}`}>Home</span></NavLink>
+            <NavLink to={"/repositories"}><span className={`${classes.link2} ${hideNav ? classes.hide : " "}`}>Repos</span></NavLink>
           </Nav>
-          <SearchBar />
+          <SearchBar onHideNav = {onHideNav} onShowNav={showNav} />
         </Navbar.Collapse>
 
         </Container>

@@ -4,11 +4,22 @@ import { NavLink } from "react-router-dom";
 import { getAllRepos } from "../../lib/RepoApi";
 import classes from "./SearchBar.module.css";
 
-const SearchBar = () => {
+const SearchBar = ({onHideNav, onShowNav}) => {
   const [searchData, setSearchData] = useState("");
   const [searchError, setSearchError] = useState("");
   const [searchedRepo, setSearchedRepo] = useState([]);
   const [fetchedRepo, setFetchedRepo] = useState([]);
+
+
+
+ const onFocusToSearchInput = () => {
+   onHideNav()
+ }
+
+ const onUnfocusToSearchInput = () => {
+  onShowNav()
+ }
+
 
   // changer search input data handler function
   const onChangeSearchDataHandler = (event) => {
@@ -100,6 +111,8 @@ const SearchBar = () => {
           placeholder="Search for Repos"
           aria-label="Search"
           onChange={onChangeSearchDataHandler}
+          onFocus={onFocusToSearchInput}
+          onBlur={onUnfocusToSearchInput}
         />
         <div className={classes.dropdownContent}>{searchResult}</div>
       </Form>

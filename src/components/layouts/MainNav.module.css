@@ -12,3 +12,11 @@
     color:white; 
     margin-right:20px;
 }
+  
+/* For Mobile Portrait View */
+  @media screen and (max-device-width: 480px)
+  and (orientation: portrait) {
+   .hide{
+      display: none !important;
+   }
+  }
