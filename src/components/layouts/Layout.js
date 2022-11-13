@@ -38,7 +38,7 @@ const Layout = (props) => {
 
   return (
     <Fragment>
-      <MainNav />
+      <MainNav pathname={pathname} />
       <main className={pathname === "/" ? classes.main2 : classes.main}>
         {props.children}
       </main>

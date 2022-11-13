@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import classes from "./MainNav.module.css";
 import SearchBar from "./SearchBar";
 import ProfileImage from "../../assets/profile.jpg";
 
-const MainNav = () => {
+const MainNav = ({pathname}) => {
   const [hideNav, setHideNav] = useState(false);
   const onHideNav = () => {
     setHideNav(true);
@@ -16,6 +16,7 @@ const MainNav = () => {
   const showNav = () => {
     setHideNav(false);
   };
+
 
   return (
     <>
@@ -41,14 +42,14 @@ const MainNav = () => {
               <NavLink to={"/"}>
                 {" "}
                 <span
-                  className={`${classes.link} ${hideNav ? classes.hide : " "}`}
+                  className={`${classes.link} ${hideNav ? classes.hide : " "} ${pathname === "/" ? classes.active : ""}`}
                 >
                   Home
                 </span>
               </NavLink>
               <NavLink to={"/repositories"}>
                 <span
-                  className={`${classes.link2} ${hideNav ? classes.hide : " "}`}
+                  className={`${classes.link2} ${hideNav ? classes.hide : " "} ${pathname === "/repositories" ? classes.active : ""}`}
                 >
                   Repos
                 </span>
