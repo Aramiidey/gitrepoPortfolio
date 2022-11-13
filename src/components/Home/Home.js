@@ -25,7 +25,7 @@ const Home = () => {
                   View Repositories
                 </NavLink>
                 <NavLink
-                  to={"/repositories/reponame/fsggsgsggsg"}
+                  to={"/repositories/reponame/error-404"}
                   className={`${classes.navlink} btn btn-secondary mr-4`}
                 >
                   E404 - Page

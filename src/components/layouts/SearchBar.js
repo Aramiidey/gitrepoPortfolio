@@ -22,13 +22,9 @@ const SearchBar = ({onHideNav, onShowNav}) => {
  }
 
 
-  // changer search input data handler function
+  // change search input data handler function
   const onChangeSearchDataHandler = (event) => {
-    setSearchData(
-      event.target.value
-        .toLowerCase()
-        .replace(/(^|\s)\S/g, (L) => L.toUpperCase())
-    );
+    setSearchData(event.target.value);
     setSearchError("");
   };
 
@@ -36,7 +32,7 @@ const SearchBar = ({onHideNav, onShowNav}) => {
   useEffect(() => {
     const identifyer = setTimeout(() => {
       onSearchRepo();
-    }, 1000);
+    }, 2000);
 
     return () => {
       clearTimeout(identifyer);
