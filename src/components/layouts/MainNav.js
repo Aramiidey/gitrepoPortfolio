@@ -49,7 +49,7 @@ const MainNav = ({pathname}) => {
               </NavLink>
               <NavLink to={"/repositories"}>
                 <span
-                  className={`${classes.link2} ${hideNav ? classes.hide : " "} ${pathname === "/repositories" ? classes.active : ""}`}
+                  className={`${classes.link2} ${hideNav ? classes.hide : " "} ${pathname === "/repositories" ? classes.active : ""} ${pathname === `/repositories/${pathname.split("/")[2]}` ? classes.active : "" }`}
                 >
                   Repos
                 </span>

@@ -5,8 +5,6 @@ import classes from "./SingleRepo.module.css";
 import LoadingSpinner from "../UI/LoadingSpinner";
 
 const SingleRepo = ({ repoData, errorMessage, isLoading, allRepos }) => {
-  console.log(repoData);
-  console.log(errorMessage)
   let allrepos;
 
   if (allRepos.error || allRepos.length === 0) {

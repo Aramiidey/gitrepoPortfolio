@@ -31,8 +31,8 @@ const RepoLists = ({ repos, isLoading, errorMessage }) => {
         repos.length > 0 &&
         currentRecords.map((repo) => {
           return (
-            <Col lg={4} md={6} sm={6} xs={12} xl={4}>
-              <Card key={repo.id} className={`${classes.card} mb-3`}>
+            <Col key={repo.id} lg={4} md={6} sm={6} xs={12} xl={4}>
+              <Card className={`${classes.card} mb-3`}>
                 <Card.Img variant="top" src={GitHubImg} />
                 <Card.Body>
                   <Card.Title>{repo.name}</Card.Title>
@@ -45,8 +45,6 @@ const RepoLists = ({ repos, isLoading, errorMessage }) => {
                     {repo.description
                       ? repo.description
                       : "Description for this repository is not provided yet, view more details using the button below"}
-
-                    <div></div>
                   </Card.Text>
                   <NavLink
                     to={`/repositories/${repo.name}`}
